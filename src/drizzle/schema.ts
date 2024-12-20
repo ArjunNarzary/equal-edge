@@ -54,12 +54,12 @@ export const ProductCustomizationTable = pgTable("product_customizations", {
   locationMessage: text("location_message")
     .notNull()
     .default(
-      "Hey! It looks like you are from <b>{countery}</b>. We support Parity Purchasing Power, so if you need it, use code <b>“{coupon}”</b> to get <b>{discount}%</b> off."
+      "Hey! It looks like you are from <b>{country}</b>. We support Parity Purchasing Power, so if you need it, use code <b>“{coupon}”</b> to get <b>{discount}%</b> off."
     ),
   backgroundColor: text("background_color")
     .notNull()
-    .default("hsl(193,82%,31%)"),
-  textColor: text("text_color").notNull().default("hsl(0,0%,100%)"),
+    .default("hsl(193, 82%, 31%)"),
+  textColor: text("text_color").notNull().default("hsl(0, 0%, 100%)"),
   fontSize: text("font_size").notNull().default("1rem"),
   bannerContainer: text("banner_container").notNull().default("body"),
   isSticky: boolean("is_sticky").notNull().default(true),
@@ -180,7 +180,7 @@ export const UserSubscriptionTable = pgTable(
     id: uuid("id").primaryKey().defaultRandom(),
     clerkUserId: text("clerk_user_id").notNull().unique(),
     stripeSubscriptionItemId: text("stripe_subscription_item_id"),
-    stripeSubscriptonId: text("stripe_subscription_id"),
+    stripeSubscriptionId: text("stripe_subscription_id"),
     stripeCustomerId: text("stripe_customer_id"),
     tier: TierEnum("tier").notNull(),
     createdAt,

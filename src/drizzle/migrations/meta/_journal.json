@@ -8,6 +8,13 @@
       "when": 1733210191888,
       "tag": "0000_nasty_night_nurse",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1734512893349,
+      "tag": "0001_unknown_firestar",
+      "breakpoints": true
     }
   ]
 }

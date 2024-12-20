@@ -1,0 +1,1 @@
+ALTER TABLE "product_customizations" ALTER COLUMN "location_message" SET DEFAULT 'Hey! It looks like you are from <b>{country}</b>. We support Parity Purchasing Power, so if you need it, use code <b>“{coupon}”</b> to get <b>{discount}%</b> off.';
