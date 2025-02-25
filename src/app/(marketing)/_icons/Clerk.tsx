@@ -4,8 +4,8 @@ export function ClerkIcon(svgProps: ComponentProps<"svg">) {
   return (
     <svg
       viewBox="0 0 62 18"
-      fill="currentColor"
       aria-hidden="true"
+      fill="currentColor"
       {...svgProps}
     >
       <ellipse cx="8.99999" cy="9" rx="2.81249" ry="2.8125"></ellipse>

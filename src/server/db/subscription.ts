@@ -61,9 +61,13 @@ export async function updateUserSubscription(
 
 export async function getUserSubscriptionTier(userId: string) {
   const subscription = await getUserSubscription(userId)
+  const subscription2 = await db.query.UserSubscriptionTable.findFirst({
+    where: ({ clerkUserId }, { eq }) => eq(clerkUserId, userId),
+  })
 
-  if (!subscription) throw new Error("User has no subscription")
-  return subscriptionTiers[subscription.tier]
+  if (!subscription && !subscription2)
+    throw new Error("User has no subscription")
+  return subscriptionTiers[subscription?.tier || subscription2?.tier || "Free"]
 }
 
 function getUserSubscriptionInternal(userId: string) {

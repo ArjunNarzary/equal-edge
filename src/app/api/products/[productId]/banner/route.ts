@@ -33,6 +33,7 @@ export async function GET(
   if (!product) return notFound()
 
   const canShowBanner = await canShowDiscountBanner(product.clerkUserId)
+  if (!canShowBanner) return notFound()
 
   await createProductView({
     productId: product.id,
@@ -40,7 +41,6 @@ export async function GET(
     userId: product.clerkUserId,
   })
 
-  if (!canShowBanner) return notFound()
   if (country == null || discount == null) return notFound()
   return new Response(
     await getJavaScript(

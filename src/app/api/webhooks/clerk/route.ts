@@ -41,15 +41,17 @@ export async function POST(req: Request) {
       "svix-timestamp": svixTimestamp,
       "svix-signature": svixSignature,
     }) as WebhookEvent
-  } catch (err) {
+  } catch {
     return new Response("Error occured", {
       status: 400,
     })
   }
+  console.log("user created--343434--->>>", event.type)
 
   switch (event.type) {
     case "user.created": {
       //Create User
+      console.log("user created----->>>")
       await createUserSubscription({
         clerkUserId: event.data.id,
         tier: "Free",

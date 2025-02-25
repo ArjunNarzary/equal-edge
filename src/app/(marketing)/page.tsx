@@ -17,11 +17,13 @@ import { formatCompactNumber } from "@/lib/formatters"
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 import BrandLogo from "@/components/BrandLogo"
+import { NextIcon } from "./_icons/Next"
+import { DrizzleIcon } from "./_icons/Drizzle"
 
 export default function HomePage() {
   return (
     <>
-      <section className="min-h-screen bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_60%)] flex items-center justify-center text-center text-balance flex-col gap-8 px-4">
+      <section className="min-h-screen bg-[radial-gradient(hsl(213.1,93.9%,67.8%,40%),hsl(199.4,95.5%,73.9%,40%),hsl(var(--background))_60%)] flex items-center justify-center text-center text-balance flex-col gap-8 px-4">
         <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight m-4">
           Price Smarter, Sell bigger!
         </h1>
@@ -41,34 +43,58 @@ export default function HomePage() {
             Trusted by the top modern companies
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-16">
-            <Link href="https://neaon.tech">
+            <Link
+              href="https://neaon.tech"
+              className="flex justify-center items-center"
+            >
               <NeonIcon />
             </Link>
-            <Link href="https://clerk.com">
+            <Link
+              href="https://clerk.com"
+              className="flex justify-center items-center"
+            >
               <ClerkIcon />
             </Link>
-            <Link href="https://neaon.tech">
+            <Link
+              href="https://nextjs.org/"
+              className="flex justify-center items-center"
+            >
+              <NextIcon />
+            </Link>
+            <Link href="https://orm.drizzle.team/">
+              <DrizzleIcon />
+            </Link>
+            <Link
+              href="https://neaon.tech"
+              className="flex justify-center items-center"
+            >
               <NeonIcon />
             </Link>
-            <Link href="https://clerk.com">
+            <Link
+              href="https://clerk.com"
+              className="flex justify-center items-center"
+            >
               <ClerkIcon />
             </Link>
-            <Link href="https://neaon.tech">
+            <Link
+              href="https://nextjs.org/"
+              className="flex justify-center items-center"
+            >
+              <NextIcon />
+            </Link>
+            <Link href="https://orm.drizzle.team/">
+              <DrizzleIcon />
+            </Link>
+            <Link
+              href="https://neaon.tech"
+              className="flex justify-center items-center"
+            >
               <NeonIcon />
             </Link>
-            <Link href="https://clerk.com">
-              <ClerkIcon />
-            </Link>
-            <Link href="https://neaon.tech">
-              <NeonIcon />
-            </Link>
-            <Link href="https://clerk.com">
-              <ClerkIcon />
-            </Link>
-            <Link href="https://neaon.tech">
-              <NeonIcon />
-            </Link>
-            <Link className="md:max-xl:hidden" href="https://clerk.com">
+            <Link
+              href="https://clerk.com"
+              className="flex justify-center items-center"
+            >
               <ClerkIcon />
             </Link>
           </div>
