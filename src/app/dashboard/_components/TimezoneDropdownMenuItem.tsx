@@ -1,7 +1,4 @@
-import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu"
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
 import { createURL } from "@/lib/utils"
 import Link from "next/link"
 

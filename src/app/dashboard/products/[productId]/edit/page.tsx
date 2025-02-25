@@ -23,8 +23,8 @@ export default async function EditProductPage({
   params,
   searchParams,
 }: {
-  params: { productId: string }
-  searchParams: { tab?: string }
+  params: Promise<{ productId: string }>
+  searchParams: Promise<{ tab?: string }>
 }) {
   const { productId } = await params
   const { tab = "details" } = await searchParams

@@ -22,17 +22,16 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { createURL } from "@/lib/utils"
 import { getProducts } from "@/server/db/products"
-import Products from "../products/page"
 import { TimezoneDropdownMenuItem } from "../_components/TimezoneDropdownMenuItem"
 
 export default async function AnalyticsPage({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     interval?: string
     timezone?: string
     productId: string
-  }
+  }>
 }) {
   const { userId, redirectToSignIn } = await auth()
   const fetchedSearchParams = await searchParams

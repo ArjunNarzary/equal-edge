@@ -12,7 +12,7 @@ export const runtime = "edge"
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { productId: string } }
+  { params }: { params: Promise<{ productId: string }> }
 ) {
   const { productId } = await params
   const headersMap = headers()
@@ -21,7 +21,7 @@ export async function GET(
   if (!requestingUrl) {
     return notFound()
   }
-  const countryCode = getCountryCode(request)
+  const countryCode = getCountryCode()
   if (!countryCode) return notFound()
 
   const { product, discount, country } = await getProductForBanner({
@@ -53,7 +53,7 @@ export async function GET(
   )
 }
 
-function getCountryCode(request: NextRequest) {
+function getCountryCode() {
   // if (request.geo?.country != null) return request.geo.country
   if (process.env.NODE_ENV === "development") return env.TEST_COUNTRY_CODE
 }

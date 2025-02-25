@@ -28,6 +28,7 @@ export function clearFullCache() {
   revalidateTag("*")
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export function dbCache<T extends (...args: any[]) => Promise<any>>(
   cb: Parameters<typeof unstable_cache<T>>[0],
   { tags }: { tags: ValidTags[] }

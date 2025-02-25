@@ -4,8 +4,8 @@ import { db } from "@/drizzle/db"
 import { CountryGroupTable, CountryTable } from "@/drizzle/schema"
 import { sql } from "drizzle-orm"
 
-const groupCount = await updateCountryGroups()
-const countryCount = await updateCountries()
+export const groupCount = await updateCountryGroups()
+export const countryCount = await updateCountries()
 
 async function updateCountryGroups() {
   const countryGroupInsertData = countriesByDiscount.map(

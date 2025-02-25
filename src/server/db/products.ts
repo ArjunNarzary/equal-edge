@@ -1,4 +1,3 @@
-import { string } from "zod"
 import { db } from "@/drizzle/db"
 import {
   CountryGroupDiscountTable,
@@ -15,7 +14,6 @@ import {
 } from "@/lib/cache"
 import { and, count, eq, inArray, sql } from "drizzle-orm"
 import { BatchItem } from "drizzle-orm/batch"
-import { get } from "http"
 import { removeTrailingSlash } from "@/lib/utils"
 
 export function getProductCountryGroups({
